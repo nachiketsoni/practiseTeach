@@ -1,0 +1,19 @@
+Step 1 : Create a environment 
+
+run command  : npx express-generator appKaNaam --ejs
+
+step 2 : Change the Directory to your App 
+
+run command  : cd appKaNaam
+then install all dependencise / pakages
+run command  : npm i 
+
+
+MVC folder Structure 
+model : for database model/schema
+view : frontend (already created)
+controller : callback functions routes will be in the controller folder
+
+
+
+
