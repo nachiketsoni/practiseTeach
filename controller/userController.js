@@ -13,7 +13,7 @@ exports.findUser = async (req, res, next) => {
   try {
     const users = await User.findOne({
       _id: req.params.id,
-    });
+    }).populate('posts')
     res.status(200).json(users);
   } catch (error) {
     res.status(501).json({ message: "Delete user failed", error });
