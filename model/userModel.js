@@ -12,8 +12,8 @@ const userSchema = mongoose.Schema({
   age: { type: Number, required: true },
   bio: { type: String },
   avatar: { type: String }, // URL to user's profile picture
-  //   followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-  //   following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   createdAt: { type: Date, default: Date.now },
 });
 

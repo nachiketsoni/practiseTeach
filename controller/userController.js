@@ -57,3 +57,19 @@ exports.deleteUser = async (req, res, next) => {
     res.status(501).json({ message: "Delete user failed", error });
   }
 };
+
+exports.followUser = async (req, res, next) => {
+  try {
+      const myId = await User.findById(req.body.myId)
+      const followUser = await User.findById(req.body.followUser)
+
+      myId.following.push(req.body.followUser);
+      followUser.followers.push(req.body.myId);
+      await myId.save()
+      await followUser.save()
+      res.status(200).json({myId, followUser})
+  } catch (error) {
+    res.status(501).json({ message: "Delete user failed", error });
+  }
+};
+
